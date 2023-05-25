@@ -1,0 +1,33 @@
+.item {
+    cursor: pointer;
+    margin-bottom: 0.25rem;
+}
+
+.body {
+    margin-top: 0.25rem;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.todo {
+    text-decoration: unset;
+}
+
+h2 {
+    margin: 0;
+}
+
+div[class^="col-"] {
+    padding: 0.25rem;
+}
+
+input[type="checkbox"] {
+    margin-top: 0.75rem;
+}
+
+.remove-item {
+    float: right;
+    margin-top: 0.25rem;
+}

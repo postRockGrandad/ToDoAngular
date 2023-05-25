@@ -1,0 +1,15 @@
+<div style="width: 50%; margin: 0 auto;">
+    <h1 style="text-align: center;"> Lavanda ToDo list </h1>
+    <br />
+    <ul *ngIf="list.length > 0; else noListMsg" class="list-group">
+        <app-to-do-list-item *ngFor="let item of list" 
+            [item]="item"
+        ></app-to-do-list-item>
+    </ul>
+    <hr />
+    <app-add-to-do-list-item></app-add-to-do-list-item>
+</div>
+
+<ng-template #noListMsg>
+    <h6>Nothing ToDo! Add a new item</h6>
+</ng-template>

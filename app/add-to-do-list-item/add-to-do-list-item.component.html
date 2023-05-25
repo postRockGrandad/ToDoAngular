@@ -1,0 +1,19 @@
+<form style="text-align: center;" [formGroup]="addForm" (submit)="addItem()">
+    <div class="form-row" style="margin-bottom: 1rem">
+        <input formControlName="newTitle" type="text" [ngClass]="(newTitleControl?.dirty && newTitleControl?.invalid && newTitle.length > 0) || addForm.hasError('duplicateItem')? 'invalid' : 'valid'"/>
+        <p *ngIf="newTitleControl?.dirty && newTitleControl?.hasError('minlength')">
+            ToDo item Title must be > 5 characters long 
+        </p>
+    </div>
+    <div class="form-row">
+        <input formControlName="newBody" type="text" [ngClass]="(newBodyControl?.dirty && newBodyControl?.invalid && newBody.length > 0) || addForm.hasError('duplicateItem')? 'invalid' : 'valid'"/>
+        <p *ngIf="newBodyControl?.dirty && newBodyControl?.hasError('minlength')">
+            ToDo item Body must be > 15 characters long 
+        </p>
+    </div>
+    
+    <p *ngIf="addForm.dirty && addForm.hasError('duplicateItem')">
+        ToDo item with this Title & Body already exists
+    </p>
+    <button [disabled]="addForm.invalid" type="submit"> Add </button>
+</form>
